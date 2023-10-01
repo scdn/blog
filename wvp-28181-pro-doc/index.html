@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.h5nvr.com","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.16.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="以ubuntu22.04为例安装依赖 安装cmake gcc openssl git12apt-get updateapt-get install cmake gcc openssl git libssl-dev 安装libsrtp12345curl -LO https:&#x2F;&#x2F;github.com&#x2F;cisco&#x2F;libsrtp&#x2F;archive&#x2F;refs&#x2F;tags&#x2F;v2.5.0.tar.gztar -z">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wvp-28181-pro编译文档">
+<meta property="og:url" content="https://www.h5nvr.com/wvp-28181-pro-doc/index.html">
+<meta property="og:site_name" content="H5NVR--视频监控流在线分发">
+<meta property="og:description" content="以ubuntu22.04为例安装依赖 安装cmake gcc openssl git12apt-get updateapt-get install cmake gcc openssl git libssl-dev 安装libsrtp12345curl -LO https:&#x2F;&#x2F;github.com&#x2F;cisco&#x2F;libsrtp&#x2F;archive&#x2F;refs&#x2F;tags&#x2F;v2.5.0.tar.gztar -z">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-19T16:55:03.000Z">
+<meta property="article:modified_time" content="2023-05-19T17:05:02.722Z">
+<meta property="article:author" content="海小文">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.h5nvr.com/wvp-28181-pro-doc/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.h5nvr.com/wvp-28181-pro-doc/","path":"wvp-28181-pro-doc/","title":"wvp-28181-pro编译文档"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>wvp-28181-pro编译文档 | H5NVR--视频监控流在线分发</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">H5NVR--视频监控流在线分发</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%A5ubuntu22-04%E4%B8%BA%E4%BE%8B"><span class="nav-number">1.</span> <span class="nav-text">以ubuntu22.04为例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-number">1.2.</span> <span class="nav-text">运行</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">海小文</p>
+  <div class="site-description" itemprop="description">支持直接输出RTSP、RTMP、HTTP-FLV、Websocket-FLV、HLS、webRTC多种协议流地址</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.h5nvr.com/wvp-28181-pro-doc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="海小文">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="H5NVR--视频监控流在线分发">
+      <meta itemprop="description" content="支持直接输出RTSP、RTMP、HTTP-FLV、Websocket-FLV、HLS、webRTC多种协议流地址">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="wvp-28181-pro编译文档 | H5NVR--视频监控流在线分发">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          wvp-28181-pro编译文档
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-05-20 00:55:03 / 修改时间：01:05:02" itemprop="dateCreated datePublished" datetime="2023-05-20T00:55:03+08:00">2023-05-20</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="以ubuntu22-04为例"><a href="#以ubuntu22-04为例" class="headerlink" title="以ubuntu22.04为例"></a>以ubuntu22.04为例</h2><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><ul>
+<li>安装cmake gcc openssl git<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br><span class="line">apt-get install cmake gcc openssl git libssl-dev</span><br></pre></td></tr></table></figure></li>
+<li>安装libsrtp<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -LO https://github.com/cisco/libsrtp/archive/refs/tags/v2.5.0.tar.gz</span><br><span class="line">tar -zxvf v2.5.0.tar.gz</span><br><span class="line">cd libsrtp-2.5.0</span><br><span class="line">./configure</span><br><span class="line">make &amp;&amp;sudo make install</span><br></pre></td></tr></table></figure></li>
+<li>编译ZLMeidaKit<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#国内用户推荐从同步镜像网站gitee下载 </span><br><span class="line">git clone --depth 1 https://gitee.com/xia-chu/ZLMediaKit</span><br><span class="line">cd ZLMediaKit</span><br><span class="line">#千万不要忘记执行这句命令</span><br><span class="line">git submodule update --init</span><br><span class="line">apt-get install build-essential</span><br><span class="line">cd ZLMediaKit</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake ..</span><br><span class="line">make -j4</span><br><span class="line">#运行</span><br><span class="line">cd ZLMediaKit/release/linux/Debug</span><br><span class="line">#通过-h可以了解启动参数</span><br><span class="line">./MediaServer -h</span><br><span class="line">#以守护进程模式启动</span><br><span class="line">./MediaServer -d &amp;</span><br></pre></td></tr></table></figure></li>
+<li>下载Release 版本ffmpeg<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz</span><br><span class="line">tar -xvf ffmpeg-release-amd64-static.tar.xz</span><br><span class="line">ln -s /home/ffmpeg-6.0-amd64-static/ffmpeg /usr/bin/ffmpeg</span><br><span class="line">ln -s /home/ffmpeg-5.0.1-amd64-static/ffprode /usr/bin/ffprode</span><br></pre></td></tr></table></figure></li>
+<li>node<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://npm.taobao.org/mirrors/node/v14.17.2/node-v14.17.2-linux-x64.tar.xz</span><br><span class="line">tar -xvf node-v14.17.2-linux-x64.tar.xz</span><br><span class="line">mv node-v14.17.2-linux-x64 /usr/local/nodejs</span><br><span class="line">ln -s /usr/local/nodejs/bin/npm /usr/local/bin</span><br><span class="line">npm config set registry https://registry.npm.taobao.org</span><br><span class="line">npm config list</span><br><span class="line">#验证是否安装成功</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure></li>
+<li>安装jdk<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">openjdk-11-jre</span><br><span class="line">#验证是否安装成功</span><br><span class="line">java -version</span><br></pre></td></tr></table></figure></li>
+<li>安装maven <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://archive.apache.org/dist/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz</span><br><span class="line">tar -xvf apache-maven-3.8.4-bin.tar.gz</span><br><span class="line">mkdir /usr/local/maven</span><br><span class="line">mv apache-maven-3.8.4 /usr/local/maven/apache-maven-3.8.4</span><br><span class="line">#配置环境变量</span><br><span class="line">vim /etc/profile</span><br><span class="line">MAVEN_HOME=/usr/local/maven/apache-maven-3.8.4</span><br><span class="line">export PATH=$&#123;MAVEN_HOME&#125;/bin:$&#123;PATH&#125;</span><br><span class="line">#刷新文件</span><br><span class="line">source /etc/profile</span><br><span class="line">#验证</span><br><span class="line">mvn –v</span><br><span class="line">#https://github.com/ZLMediaKit/ZLMediaKit/wiki/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B</span><br></pre></td></tr></table></figure></li>
+<li>编译前端页面<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitee.com/pan648540858/wvp-GB28181-pro.git</span><br><span class="line">#编译静态页面</span><br><span class="line">cd wvp-GB28181-pro/web_src/</span><br><span class="line">npm --registry=https://registry.npm.taobao.org install</span><br><span class="line">npm run build</span><br><span class="line">#编译如果报错, 一般都是网络问题, 导致的依赖包下载失败</span><br><span class="line">#编译完成后在src/main/resources下出现static目录</span><br><span class="line">#打包项目, 生成可执行jar</span><br><span class="line">cd ..</span><br><span class="line">mvn package</span><br><span class="line">#https://doc.wvp-pro.cn/#/_content/introduction/compile</span><br></pre></td></tr></table></figure></li>
+<li>安装redis<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install redis</span><br></pre></td></tr></table></figure></li>
+<li>安装mysql<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">apt-get install mysql-server</span><br><span class="line">#设置密码</span><br><span class="line">mysql -u root -p</span><br><span class="line">use mysql ;</span><br><span class="line">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;</span><br><span class="line">update user set authentication_string=&#x27;&#x27; where user=&#x27;root&#x27;;</span><br><span class="line">update user set plugin=&#x27;mysql_native_password&#x27; where user=&#x27;root&#x27;;</span><br><span class="line">ALTER user &#x27;root&#x27;@&#x27;%&#x27; IDENTIFIED BY &#x27;YOUR_PASSWORD&#x27;;</span><br><span class="line">quit</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#wvp 启动 </span><br><span class="line">java -jar xxxx.jar --spring.config.location=xxxx.yml </span><br><span class="line">yml 用绝对路径</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/h5nvr-intro/" rel="prev" title="H5NVR在线分发视频流">
+                  <i class="fa fa-chevron-left"></i> H5NVR在线分发视频流
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">海小文</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
