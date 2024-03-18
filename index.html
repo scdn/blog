@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>-->
@@ -166,6 +166,84 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://www.h5nvr.com/gb28181-id-nameing-rules-for-devices/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/logo.png">
+      <meta itemprop="name" content="长沙零天信息">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="H5NVR">
+      <meta itemprop="description" content="专注监控视频在线分发,点播,网站主要提供监控视频流在线分发技术的应用分享和技术交流,目前流协议主要有rtsp,rtmp,hls,flv,webrtc等,接入协议有GB28181以及各厂商的私有协议,如海康的萤石,大华的乐橙等">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | H5NVR">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/gb28181-id-nameing-rules-for-devices/" class="post-title-link" itemprop="url">GB28181国标ID命名规范</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2024-03-18 13:48:05 / 修改时间：14:02:13" itemprop="dateCreated datePublished" datetime="2024-03-18T13:48:05+08:00">2024-03-18</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>国标ID是在国标GB&#x2F;T28181中使用的ID，在一个服务器中保持唯一，命名规则应遵从GB&#x2F;T 28181-2016《公共安全视图计算联网系统信息传输、交换、控制技术要求》。</p>
+<p>国标ID由中心编码（8位）、行业编码（2位）、类型编码（3位）、网络标识（1位）和序号（6位）共20位十进制数字字符构成，其中：</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/gb28181-id-nameing-rules-for-devices/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -624,7 +702,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-02-21 12:53:47" itemprop="dateModified" datetime="2024-02-21T12:53:47+08:00">2024-02-21</time>
+      <time title="修改时间：2024-03-18 14:03:23" itemprop="dateModified" datetime="2024-03-18T14:03:23+08:00">2024-03-18</time>
     </span>
 
   
@@ -639,7 +717,6 @@
     <div class="post-body" itemprop="articleBody">
           <p>众所周知,RTSP协议只能在局域网进行播放,如果有公网访问的需求,第一种方法是申请互联网专线,但是价格高昂,第二种,也就是今天的主题,通过反向代理,将内网ip映射为公网,实时公网访问<br>本例服务端以腾讯云服务器(系统CentOS7.3),客户端以windows10,海康摄像头为例</p>
 <h2 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h2><p>登录腾讯云的控制台,进入服务器页面,添加防火墙规则”所有TCP允许访问”(实际生产环境可根据实际进行操作)<br>使用ssh工具登录云服务器,下载frp(版本0.49.0,很重要!客户端和服务端的版本请保持一致)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.49.0/frp_0.49.0_linux_arm64.tar.gz</span><br><span class="line">tar -zxf frp_0.49.0_linux_arm64.tar.gz</span><br><span class="line">cd frp_0.49.0_linux_arm64</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/frp-rtsp-remote/#more" rel="contents">
@@ -709,7 +786,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-14 16:55:10" itemprop="dateModified" datetime="2024-03-14T16:55:10+08:00">2024-03-14</time>
+      <time title="修改时间：2024-03-18 14:01:57" itemprop="dateModified" datetime="2024-03-18T14:01:57+08:00">2024-03-18</time>
     </span>
 
   
@@ -724,9 +801,14 @@
     <div class="post-body" itemprop="articleBody">
           <h2 id="Docker部署"><a href="#Docker部署" class="headerlink" title="Docker部署"></a>Docker部署</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker pull 648540858/wvp_pro</span><br><span class="line"></span><br><span class="line">docker run  --env WVP_IP=&quot;你的IP&quot; -it -p 18080:18080 -p 30000-30500:30000-30500/udp -p 30000-30500:30000-30500/tcp -p 80:80 -p 5060:5060 -p 5060:5060/udp 648540858/wvp_pro</span><br></pre></td></tr></table></figure>
 <p>访问：http:&#x2F;&#x2F;你的IP:18080, 默认用户名admin, 密码admin.　　<br>Docker镜像已经很久没有更新了，建议编译部署</p>
-<h2 id="编译部署"><a href="#编译部署" class="headerlink" title="编译部署"></a>编译部署</h2><p>请点击链接前往微信公众号查看</p>
-<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzkwNzIxMTExNQ==&mid=2247483882&idx=1&sn=8bb6b3e26eab3bccb43eab48cf331294">GB28181服务器保姆级编译教程</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/wvp-28181-pro-doc/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
