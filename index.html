@@ -281,9 +281,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-03-17 13:01:09 / 修改时间：13:48:35" itemprop="dateCreated datePublished" datetime="2024-03-17T13:01:09+08:00">2024-03-17</time>
+      <time title="创建时间：2024-03-17 13:01:09" itemprop="dateCreated datePublished" datetime="2024-03-17T13:01:09+08:00">2024-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-18 14:18:12" itemprop="dateModified" datetime="2024-03-18T14:18:12+08:00">2024-03-18</time>
     </span>
 
   
@@ -523,9 +529,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2024-03-01 21:31:00 / 修改时间：21:58:30" itemprop="dateCreated datePublished" datetime="2024-03-01T21:31:00+08:00">2024-03-01</time>
+      <time title="创建时间：2024-03-01 21:31:00" itemprop="dateCreated datePublished" datetime="2024-03-01T21:31:00+08:00">2024-03-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-18 14:12:51" itemprop="dateModified" datetime="2024-03-18T14:12:51+08:00">2024-03-18</time>
     </span>
 
   
@@ -544,8 +556,6 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp://admin:hik12345@10.16.4.25:554/Streaming/Channels/101</span><br></pre></td></tr></table></figure>
 <p>取第1个通道的子码流预览</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp://admin:hik12345@10.16.4.25:554/Streaming/Channels/102</span><br></pre></td></tr></table></figure>
-<p>取第1个通道的第三码流预览</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rtsp://admin:hik12345@10.16.4.25:554/Streaming/Channels/103</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/hik-rtsp/#more" rel="contents">
@@ -615,7 +625,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-07-13 21:40:31" itemprop="dateModified" datetime="2023-07-13T21:40:31+08:00">2023-07-13</time>
+      <time title="修改时间：2024-03-18 14:12:48" itemprop="dateModified" datetime="2024-03-18T14:12:48+08:00">2024-03-18</time>
     </span>
 
   
@@ -631,8 +641,7 @@
           <p>本例以腾讯云(CentOS7.6),海康摄像头为例</p>
 <ol>
 <li>安装依赖<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install gcc g++ vim make cmake autoconf</span><br></pre></td></tr></table></figure></li>
-<li>下载编译srs<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://github.com/ossrs/srs/releases/download/v5.0-b1/srs-server-5.0-b1.tar.gz</span><br><span class="line">tar -xvf srs-server-5.0-b1.tar.gz</span><br><span class="line">cd srs-server-5.0-b1/trunk</span><br><span class="line">./configure --gb28181=on</span><br><span class="line">make</span><br></pre></td></tr></table></figure></li>
-<li>修改服务器配置ip<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim conf/gb28181.conf</span><br><span class="line"></span><br><span class="line">请将stream_caster.sip.candidate换成公网IP</span><br></pre></td></tr></table></figure>
+<li>下载编译srs<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /home</span><br><span class="line">wget https://github.com/ossrs/srs/releases/download/v5.0-b1/srs-server-5.0-b1.tar.gz</span><br><span class="line">tar -xvf srs-server-5.0-b1.tar.gz</span><br><span class="line">cd srs-server-5.0-b1/trunk</span><br><span class="line">./configure --gb28181=on</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/srs-gb28181/#more" rel="contents">
