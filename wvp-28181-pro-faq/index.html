@@ -47,7 +47,7 @@
 <meta property="og:image" content="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/015.png">
 <meta property="og:image" content="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/016.png">
 <meta property="article:published_time" content="2024-03-02T16:27:58.000Z">
-<meta property="article:modified_time" content="2024-03-14T11:27:58.420Z">
+<meta property="article:modified_time" content="2024-03-23T06:19:38.003Z">
 <meta property="article:author" content="长沙零天信息">
 <meta property="article:tag" content="GB28181,rtsp,rtmp,hls,flv,webrtc,海康,大华,在线分发,视频流">
 <meta name="twitter:card" content="summary">
@@ -234,7 +234,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-14 19:27:58" itemprop="dateModified" datetime="2024-03-14T19:27:58+08:00">2024-03-14</time>
+      <time title="修改时间：2024-03-23 14:19:38" itemprop="dateModified" datetime="2024-03-23T14:19:38+08:00">2024-03-23</time>
     </span>
 
   
@@ -279,7 +279,7 @@
 <h4 id="wvp配置SSL"><a href="#wvp配置SSL" class="headerlink" title="wvp配置SSL"></a>wvp配置SSL</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd /home/wvp-GB28181-pro/target</span><br><span class="line">mkdir resource</span><br><span class="line">cp /home/XXX.key resource/</span><br><span class="line">cp /home/XXX.pem resource/</span><br><span class="line">vim application.yml</span><br><span class="line">修改server.ssh.enabled为true</span><br><span class="line">修改certificate为 /home/wvp-GB28181-pro/target/resource/XXX.pem</span><br><span class="line">修改certificate-private-key为　/home/wvp-GB28181-pro/target/resource/XXX.key</span><br><span class="line">修改media.stream-ip为绑定的域名</span><br><span class="line">如ZLM的ssl端口修改了，请将media. http-ssl-port同步修改</span><br></pre></td></tr></table></figure>
 <p><img src="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/012.png"><br><img src="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/013.png"><br>重启ZLM和WVP后，即可实现域名https访问，流媒体链接亦可域名https播放<br><img src="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/014.png"><br><img src="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/015.png"> </p>
 <h3 id="画面显示花屏"><a href="#画面显示花屏" class="headerlink" title="画面显示花屏"></a>画面显示花屏</h3><p>监控画面经常花屏，可以把流传输模式改成“TCP被动模式”，同时，在弱网环境下，配置正常，偶现收流超时，可更换为“TCP被动模式”后再次尝试播放<br><img src="https://lingtiantech.oss-cn-guangzhou.aliyuncs.com/h5nvr/blog/016.png"> </p>
-<h3 id="点播端口分配异常"><a href="#点播端口分配异常" class="headerlink" title="点播端口分配异常"></a>点播端口分配异常</h3><p>这个是由于rtc的8000端口未开放，打开8000&#x2F;tcp即可</p>
+<h3 id="点播端口分配异常"><a href="#点播端口分配异常" class="headerlink" title="点播端口分配异常"></a>点播端口分配异常</h3><p>首先请检查wvp和zlm的配置是否一致，具体可查看<a href="#%E6%92%AD%E6%94%BE%E6%8F%90%E7%A4%BA%E6%94%B6%E6%B5%81%E8%B6%85%E6%97%B6">播放提示收流超时</a>，然后请确保防火墙的8000tcp端口已经打开，包括服务器系统的防火墙和云服务商的安全策略中的入站规则</p>
 <h3 id="前后端分离部署"><a href="#前后端分离部署" class="headerlink" title="前后端分离部署"></a>前后端分离部署</h3><p>前后端部署目前在最新的版本已经支持，请使用3月15日之后的版本部署 前端编译后的文件在src&#x2F;main&#x2F;resources&#x2F;static中，将此目录下的文件部署。 前后端分离部署最大的问题是跨域的解决，之前版本使用cookie完成登录流程，而cookie是不可以在复杂跨域中使用的。所以当前版本使用JWT生成的TOKEN作为认证凭据， 部署前端后需要在wvp中配置前端访问的地址以完成跨域流程。  </p>
 <h4 id="配置前端服务器"><a href="#配置前端服务器" class="headerlink" title="配置前端服务器"></a>配置前端服务器</h4><p>假如你的服务有公网域名为xxx.com，公网IP为11.11.11.11， 那么你可以在wvp中这样配置：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">user-settings:</span><br><span class="line"># 跨域配置，配置你访问前端页面的地址即可， 可以配置多个</span><br><span class="line">allowed-origins:</span><br><span class="line"> - http://xxx.com:8008</span><br><span class="line"> - http://11.11.11.11:8008</span><br></pre></td></tr></table></figure>
